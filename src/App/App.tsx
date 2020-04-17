@@ -7,6 +7,12 @@ const UseStatePage = lazy(() =>
 	)
 );
 
+const UseReducerPage = lazy(() =>
+	import(
+		/* webpackChunkName: "useReducer" */ '../examples/useReducer/UseReducerPage'
+	)
+);
+
 const UseContextPage = lazy(() =>
 	import(
 		/* webpackChunkName: "useContext" */ '../examples/useContext/UseContextPage'
@@ -27,6 +33,11 @@ const App = () => {
 									</Link>
 								</li>
 								<li>
+									<Link to="/usereducer">
+										useReducer Examples
+									</Link>
+								</li>
+								<li>
 									<Link to="/usecontext">
 										useContext Examples
 									</Link>
@@ -35,6 +46,9 @@ const App = () => {
 						</Route>
 						<Route path="/usestate" exact>
 							<UseStatePage />
+						</Route>
+						<Route path="/usereducer" exact>
+							<UseReducerPage />
 						</Route>
 						<Route path="/usecontext" exact>
 							<UseContextPage />
